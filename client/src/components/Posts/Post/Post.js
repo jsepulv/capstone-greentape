@@ -25,7 +25,7 @@ function Post({post, setCurrentId}) {
                     <Button 
                         style = {{color:'white'}}
                         size='small'
-                        onClick={()=>setCurrentId(post._id)}>
+                        onClick={() => setCurrentId(post._id)}>
                             <MoreHorizIcon fontSize='default'/>
                         </Button>
                 </div>
@@ -37,9 +37,15 @@ function Post({post, setCurrentId}) {
                         {post.tags.map((tag)=>`#${tag} `)}
                     </Typography>
                 </div>
-                <CardContent>
                     <Typography 
                         className={classes.title}
+                        variant ='h5'
+                        gutterBottom
+                    >
+                        {post.title}
+                    </Typography>
+                <CardContent>
+                    <Typography 
                         variant ='h5'
                         gutterBottom
                     >

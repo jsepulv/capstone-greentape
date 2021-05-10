@@ -6,7 +6,7 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
 import moment from 'moment';
 import useStyles from './styles';
 import {useDispatch} from 'react-redux';
-import {deletePost} from '../../../actions/posts'
+import {deletePost, likePost} from '../../../actions/posts'
 
 
 
@@ -60,7 +60,7 @@ function Post({post, setCurrentId}) {
                         <Button 
                             size='small' 
                             color='primary'
-                            onClick={()=>{}}
+                            onClick={()=>{dispatch(likePost(post._id))}}
                         >
                             <ThumbUpAltIcon fontSize='small'/>
                             Like

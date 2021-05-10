@@ -5,10 +5,9 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz'
 import moment from 'moment';
 import useStyles from './styles';
-import Morehoriz from '@material-ui/icons/MoreHoriz';
 
 
-function Post({post}) {
+function Post({post, setCurrentId}) {
     const classes = useStyles();
     return (
         <Card
@@ -26,7 +25,7 @@ function Post({post}) {
                     <Button 
                         style = {{color:'white'}}
                         size='small'
-                        onClick={()=>{}}>
+                        onClick={()=>setCurrentId(post._id)}>
                             <MoreHorizIcon fontSize='default'/>
                         </Button>
                 </div>
@@ -49,7 +48,7 @@ function Post({post}) {
                 </CardContent>
                 <CardActions className={classes.cardActions}>
                         <Button 
-                            size='small'
+                            size='small' 
                             color='primary'
                             onClick={()=>{}}
                         >

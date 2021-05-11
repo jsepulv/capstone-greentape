@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux'
 import {createStore, applyMiddleware, compose} from'redux';
 import thunk from 'redux-thunk'; 
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {BrowserRouter} from 'react-router-dom'
 
 import reducers from './reducers'
 
@@ -16,9 +16,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-      <Switch>
-    <Route path='/' component={App}/>
-      </Switch>
+      <App/>
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,

@@ -50,7 +50,9 @@ function Post({post, setCurrentId}) {
                     </Typography>
                 <CardContent>
                     <Typography 
-                        variant ='h5'
+                        variant ='body2'
+                        color='textSecondary'
+                        component='p'
                         gutterBottom
                     >
                         {post.message}

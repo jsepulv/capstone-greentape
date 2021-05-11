@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect  } from 'react';
+import {useHistory} from 'react-router-dom'
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
@@ -21,16 +22,19 @@ const Form = ({ currentId, setCurrentId }) => {
     setPostData({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
   };
 
+const  history = useHistory();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (currentId === 0) {
+    if (!currentId) {
       dispatch(createPost(postData));
       clear();
     } else {
       dispatch(updatePost(currentId, postData));
       clear();
     }
+    history.push('/')
   };
 
   return (
